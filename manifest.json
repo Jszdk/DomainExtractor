@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "备案信息提取器",
+  "version": "1.0.0",
+  "description": "提取工信部备案网站的域名备案信息，导出结构化数据",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://beian.miit.gov.cn/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://beian.miit.gov.cn/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
